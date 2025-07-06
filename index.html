@@ -2,66 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VANAPILLI SUCHIT</title>
+  <title>Login Page</title>
   <style>
     body {
       background-color: skyblue;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      text-align: center;
+      padding-top: 100px;
     }
+
     h1 {
       font-weight: bold;
-      font-size: 3em;
-      color: #ffffff;
-      margin-bottom: 30px;
+      color: black;
     }
+
     .login-box {
-      background-color: white;
+      background: white;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: 0 auto;
       width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
     }
-    .login-box input[type="text"],
-    .login-box input[type="password"] {
-      width: 100%;
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
       padding: 10px;
       margin: 10px 0;
-      border: 1px solid #ccc;
+      border: 1px solid gray;
       border-radius: 5px;
+      color: gray;
     }
-    .login-box input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #007BFF;
+
+    input::placeholder {
+      color: gray;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: black;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-    .login-box input[type="submit"]:hover {
-      background-color: #0056b3;
+
+    .portfolio-page {
+      display: none;
+    }
+
+    .portfolio-page h2 {
+      color: black;
+      font-weight: bold;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-  <h1>VANAPILLI SUCHIT</h1>
-  <div class="login-box">
-    <form>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-
-      <input type="submit" value="Login">
-    </form>
+  <div class="login-page">
+    <h1>VANAPILLI SUCHIT</h1>
+    <div class="login-box">
+      <input type="text" placeholder="Mani" id="username"><br>
+      <input type="password" placeholder="•••••" id="password"><br>
+      <button onclick="login()">Login</button>
+    </div>
   </div>
+
+  <div class="portfolio-page">
+    <h2>WELCOME TO MY PORTFOLIO</h2>
+  </div>
+
+  <script>
+    function login() {
+      // Just hide login page and show portfolio
+      document.querySelector('.login-page').style.display = 'none';
+      document.querySelector('.portfolio-page').style.display = 'block';
+    }
+  </script>
+
 </body>
 </html>
